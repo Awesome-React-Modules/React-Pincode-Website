@@ -1,17 +1,25 @@
 # React-Pincode production
 Production repository for React-Pincode. To see the live app, go to https://react-pincode.netlify.com/
 
-## Available Scripts
+### Prerequisites
+* NPM
+* NodeJS
 
-### `npm start`
+### Installing
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To set up the project in development, follow the steps:
 
-### `npm test`
+* `git clone git@github.com:Awesome-React-Modules/React-Pincode-Website.git`
+* `cd Awesome-React-Modules`
+* `npm install`
+* `npm start`
 
-Launches the test runner in the interactive watch mode.<br />
+This would fire up a server to test the project. Then, open up a browser and point it to  http://localhost:3000
 
-### `npm run build`
+## Running the tests
 
-Builds the app for production to the `build` folder.<br />
+You can run tests by `npm test`, which would launch the test runner in the interactive watch mode.
+
+## Deployment
+
+To build the website, run `npm run build` . This would create a new `public` folder, which can be used to deploy the app on a production server.
