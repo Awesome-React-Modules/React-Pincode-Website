@@ -10,7 +10,7 @@ Production repository for React-Pincode. To see the live app, go to https://reac
 To set up the project in development, follow the steps:
 
 * `git clone git@github.com:Awesome-React-Modules/React-Pincode-Website.git`
-* `cd Awesome-React-Modules`
+* `cd React-Pincode-Website`
 * `npm install`
 * `npm start`
 
