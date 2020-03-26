@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import './App.css'
 
@@ -12,6 +11,7 @@ class Pincode extends Component {
     this.state = {
       pincode: "",
       city: "",
+      district: "",
       state: "",
       error: ""
     };
@@ -27,7 +27,8 @@ class Pincode extends Component {
         .then(res =>
           this.setState({
             state: res.data[0].PostOffice[0].State,
-            city: res.data[0].PostOffice[0].District
+            city: res.data[0].PostOffice[0].Block,
+            district: res.data[0].PostOffice[0].District
           })
         )
         .then(() => {
@@ -43,6 +44,7 @@ class Pincode extends Component {
     if (e.target.value.length !== 6) {
       this.setState({
         city: "",
+        district:"",
         state: "",
         error: "ZIP code must be of 6 digits"
       });
@@ -88,6 +90,19 @@ class Pincode extends Component {
             variant="outlined"
             margin="normal"
             fullWidth
+            name="district"
+            label="District"
+            id="district"
+            type="String"
+            disabled={true}
+            placeholder="District"
+            value={this.state.district}
+            style={this.props.districtInput}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
             name="State"
             label="State"
             id="State"
@@ -103,8 +118,6 @@ class Pincode extends Component {
         </div>
       </div>
       </div>
-      <Box mt={8}>
-      </Box>
     </Container>
     );
   }
