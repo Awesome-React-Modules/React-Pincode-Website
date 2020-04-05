@@ -1,4 +1,4 @@
-name: Bad Language
+name: Bad Language Check
 on:
   issues:
     types:
