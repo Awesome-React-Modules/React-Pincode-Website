@@ -124,7 +124,7 @@ class Pincode extends Component {
         </div>
         {this.state.flag ? 
         <Button onClick={() => window.location.href="https://www.google.com/maps/place/"+this.state.city} variant="outlined" color="primary">
-          widhawioud
+          Show in Google Maps
         </Button>:<div><br/></div>}
       </div>
       </div>
