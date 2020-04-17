@@ -3,6 +3,7 @@ import axios from "axios";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 import './App.css'
 
 class Pincode extends Component {
@@ -13,14 +14,15 @@ class Pincode extends Component {
       city: "",
       district: "",
       state: "",
-      error: ""
+      error: "",
+      flag: false
     };
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
     if (e.target.value.length === 6) {
       this.setState({
-        error: ""
+        error: "",
       });
       axios
         .get(`https://api.postalpincode.in/pincode/${e.target.value}`)
@@ -33,11 +35,14 @@ class Pincode extends Component {
         )
         .then(() => {
           document.getElementById("pincode").classList.remove("error");
+          this.setState({
+            flag:true
+          })
         })
         .catch(err => {
-          // document.getElementById("pincode").className = "error";
           this.setState({
-            error: "Invalid PIN Code"
+            error: "Invalid PIN Code",
+            flag: false
           });
         });
     }
@@ -46,7 +51,8 @@ class Pincode extends Component {
         city: "",
         district:"",
         state: "",
-        error: "ZIP code must be of 6 digits"
+        error: "ZIP code must be of 6 digits",
+        flag: false
       });
     }
   }
@@ -116,6 +122,10 @@ class Pincode extends Component {
         <div>
           <h3>Enter 6-digit pincode to see its details</h3>
         </div>
+        {this.state.flag ? 
+        <Button onClick={() => window.location.href="https://www.google.com/maps/place/"+this.state.city} variant="outlined" color="primary">
+          widhawioud
+        </Button>:<div><br/></div>}
       </div>
       </div>
     </Container>
