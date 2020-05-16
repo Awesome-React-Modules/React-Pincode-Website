@@ -26,3 +26,5 @@ To build the website, run `npm run build` . This would create a new `public` fol
 
 ## Code Pen Implemention Link
 Check [this](https://codepen.io/) for implemention purpose.
+## Code of Conduct
+Read our code of conduct [here](CODE_OF_CONDUCT.md) .
